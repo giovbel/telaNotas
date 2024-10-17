@@ -46,9 +46,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.zIndex
 import br.senai.sp.jandira.telahome.ui.theme.TelaHomeTheme
 
 
@@ -136,102 +138,166 @@ fun telaNotas() {
             shape = RoundedCornerShape(0.dp),
             colors = CardDefaults.cardColors(containerColor = Color.Transparent)
         ) {
-
-            Row(
-                modifier = Modifier.fillMaxSize(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                IconButton(
-                    onClick = {  },
-                    modifier = Modifier.padding(start = 16.dp)
+            Column {
+                Row(
+                    modifier = Modifier.fillMaxWidth().height(500.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        contentDescription = "Voltar",
-                        tint = Color(0xFF213787),
-                        modifier = Modifier.size(48.dp)
-                    )
-                }
+                    IconButton(
+                        onClick = {  },
+                        modifier = Modifier.padding(start = 16.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = "Voltar",
+                            tint = Color(0xFF213787),
+                            modifier = Modifier.size(48.dp)
+                        )
+                    }
 
-                Box(
-                    modifier = Modifier
-                        .fillMaxHeight()
-                        .fillMaxWidth(0.7f)
-                ) {
-                    Card(
+
+                    Box(
                         modifier = Modifier
-                            .height(255.dp)
-                            .width(276.dp)
-                            .align(Alignment.Center)
-                            .offset(x = -10.dp)
-                                .graphicsLayer {
-                                rotationZ = -10f
-                            }
-                            .border(4.dp, Color(0xFF020075), RoundedCornerShape(20.dp)),
-                        shape = RoundedCornerShape(30.dp),
-                        colors = CardDefaults.cardColors(Color(0xFFBCDDFF))
+                            .height(700.dp)
+                            .fillMaxWidth(0.7f)
                     ) {
                         Card(
                             modifier = Modifier
-                                .fillMaxHeight()
-                                .width(210.dp)
-                                .align(Alignment.End),
-                            colors = CardDefaults.cardColors(Color(0xFF90C6FF))
+                                .height(255.dp)
+                                .width(276.dp)
+                                .align(Alignment.Center)
+                                .offset(x = -10.dp)
+                                .graphicsLayer {
+                                    rotationZ = -10f
+                                }
+                                .border(4.dp, Color(0xFF020075), RoundedCornerShape(20.dp)),
+                            shape = RoundedCornerShape(30.dp),
+                            colors = CardDefaults.cardColors(Color(0xFFBCDDFF))
                         ) {
+                            Card(
+                                modifier = Modifier
+                                    .fillMaxHeight()
+                                    .width(210.dp)
+                                    .align(Alignment.End),
+                                colors = CardDefaults.cardColors(Color(0xFF90C6FF))
+                            ) {
+
+                            }
+                        }
+                        Card(
+                            modifier = Modifier
+                                .height(250.dp)
+                                .width(280.dp)
+                                .align(Alignment.Center)
+                                .offset(y = 20.dp,  x = 25.dp)
+                                .graphicsLayer {
+                                    rotationZ = -12f
+                                }
+                                .border(4.dp, Color(0xFF020075), RoundedCornerShape(20.dp)),
+                            shape = RoundedCornerShape(30.dp),
+                            colors = CardDefaults.cardColors(Color(0xFFFFFFD2))
+                        ) {
+
+                        }
+                        Card(
+                            modifier = Modifier
+                                .height(260.dp)
+                                .width(290.dp)
+                                .align(Alignment.Center)
+                                .offset(y = -15.dp, x = 10.dp)
+                                .border(4.dp, Color(0xFF020075), RoundedCornerShape(20.dp)),
+                            shape = RoundedCornerShape(30.dp),
+                            colors = CardDefaults.cardColors(Color(0xFFFFFFFF))
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxHeight().padding(start = 20.dp, end = 20.dp)
+                                ,
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    text = "Hoje eu estava muito feliz, raro momentos assim, amo viver, brinks sou suicida, hoje me atrasei isso afetou meu psicologico, quero morrer  aaaaaaaaaaaaaa",
+                                    textAlign = TextAlign.Center,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color(0xFF2754B2)
+                                )
+                            }
+                        }
+
+                        Image(
+                            painter = painterResource(id = R.drawable.macalmeanotando),
+                            contentDescription = "",
+                            modifier = Modifier.size(150.dp).zIndex(12f).offset(y = 27.dp, x = -32.dp),
+                        )
+                        Card (
+                            modifier = Modifier.height(55.dp).width(55.dp).offset(y = 97.dp, x = 195.dp)
+                                .border(3.dp, Color(0xFF020075), RoundedCornerShape(30.dp)),
+                            RoundedCornerShape(30.dp)
+                        ){
+
                         }
                     }
-                    Card(
-                        modifier = Modifier
-                            .height(250.dp)
-                            .width(280.dp)
-                            .align(Alignment.Center)
-                            .offset(y = 20.dp,  x = 25.dp)
-                            .graphicsLayer {
-                                rotationZ = -12f
-                            }
-                            .border(4.dp, Color(0xFF020075), RoundedCornerShape(20.dp)),
-                        shape = RoundedCornerShape(30.dp),
-                        colors = CardDefaults.cardColors(Color(0xFFFFFFD2))
+
+
+
+
+                    IconButton(
+                        onClick = {  },
                     ) {
-
-                    }
-                    Card(
-                        modifier = Modifier
-                            .height(260.dp)
-                            .width(290.dp)
-                            .align(Alignment.Center)
-                            .offset(y = -15.dp,  x = 10.dp)
-
-                            .border(4.dp, Color(0xFF020075), RoundedCornerShape(20.dp)),
-                        shape = RoundedCornerShape(30.dp),
-                        colors = CardDefaults.cardColors(Color(0xFFFFFFFF))
-                    ) {
-
+                        Icon(
+                            imageVector = Icons.Default.ArrowForward,
+                            contentDescription = "Avançar",
+                            tint = Color(0xFF213787),
+                            modifier = Modifier.size(48.dp)
+                        )
                     }
 
                 }
+                Row (
+                    modifier = Modifier.fillMaxWidth().height(100.dp),
+                    horizontalArrangement = Arrangement.SpaceAround,
+                    verticalAlignment = Alignment.CenterVertically
+                ){
+                    Button(
+                        colors = ButtonDefaults.buttonColors(Color(0xFF213787)),
+                        onClick = {}, modifier = Modifier
+                        .height(50.dp)
+                        .width(160.dp),
+                        shape = RoundedCornerShape(7.dp))
+
+                    {
+                        Text(
+                            text = "Postar Nota",
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White,
+                            fontSize = 15.sp
+                        )
+
+                    }
 
 
-                IconButton(
-                    onClick = {  },
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.ArrowForward,
-                        contentDescription = "Avançar",
-                        tint = Color(0xFF213787),
-                        modifier = Modifier.size(48.dp)
-                    )
+
+                    Button(
+                        colors = ButtonDefaults.buttonColors(Color(0xFF213787)),
+                        onClick = {}, modifier = Modifier
+                        .height(50.dp)
+                        .width(160.dp),
+                        shape = RoundedCornerShape(7.dp))
+
+                    {
+                        Text(
+                            text = "Responder Nota",
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White,
+                            fontSize = 15.sp
+                        )
+                    }
                 }
+            }
 
-            }
-            Row (
-                modifier = Modifier.fillMaxWidth().height(20.dp)
-            ){
-                Button(onClick = {}) {
-                    Text("aaqa")
-                }
-            }
         }
 
         Box(
