@@ -268,11 +268,11 @@ fun telaNotas() {
 
                     {
                         Text(
-                            text = "Postar Nota",
+                            text = "Escrever Nota",
                             textAlign = TextAlign.Center,
                             fontWeight = FontWeight.Bold,
                             color = Color.White,
-                            fontSize = 15.sp
+                            fontSize = 15.sp,
                         )
 
                     }
